@@ -1,0 +1,11 @@
+make_dirs:
+  - /var/www/.npm
+stages:
+  development:
+    - RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
+    - RUN apt-get install -y nodejs
+  production:
+    - RUN npm install --production
+purge:
+  apt:
+    - nodejs

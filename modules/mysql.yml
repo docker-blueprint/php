@@ -1,0 +1,14 @@
+dependencies:
+  php:
+    - pdo_mysql
+services:
+  database:
+    image: mysql:latest
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_DATABASE: app
+    volumes:
+      - mysql-data:/var/lib/mysql/
+volumes:
+  mysql-data:
+    driver: local

@@ -1,0 +1,5 @@
+dependencies:
+  apt:
+    - libpng-dev
+  php:
+    - gd

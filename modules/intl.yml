@@ -1,0 +1,5 @@
+dependencies:
+  apt:
+    - libicu-dev
+  php:
+    - intl

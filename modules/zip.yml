@@ -1,0 +1,6 @@
+dependencies:
+  apt:
+    - libzip-dev
+    - unzip
+  php:
+    - zip

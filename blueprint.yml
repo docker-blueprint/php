@@ -1,0 +1,11 @@
+default_service: app
+user: www-data
+modules:
+  - composer
+dependencies:
+  apt:
+    - nginx
+    - wget
+purge:
+  apt:
+    - wget
