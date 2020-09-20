@@ -4,7 +4,11 @@ FROM php:${PHP_VERSION:-7.2}-fpm AS development
 
 # RUN docker-php-ext-install $DEPS_PHP
 
-RUN rm /var/www/html/*
+# COPY $BLUEPRINT_DIR/nginx/default.conf /etc/nginx/sites-available/default
+
+ARG NGINX_PATH
+
+RUN NGINX_PATH=${NGINX_PATH} envsubst '${NGINX_PATH}' < /etc/nginx/sites-available/default | sponge /etc/nginx/sites-available/default
 
 # $DEVELOPMENT_COMMANDS
 

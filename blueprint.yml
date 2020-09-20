@@ -4,8 +4,12 @@ modules:
   - composer
 dependencies:
   apt:
+    - gettext-base
+    - moreutils
     - nginx
     - wget
 purge:
   apt:
+    - gettext-base
+    - moreutils
     - wget
