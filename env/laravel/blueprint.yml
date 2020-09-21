@@ -1,6 +1,4 @@
 modules:
   - npm
-postbuild_commands:
-  - npm install
 build_args:
   NGINX_PATH: public
