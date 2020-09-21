@@ -13,3 +13,5 @@ purge:
     - gettext-base
     - moreutils
     - wget
+build_args:
+  PHP_VERSION: 7.4

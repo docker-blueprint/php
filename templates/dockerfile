@@ -1,4 +1,6 @@
-FROM php:${PHP_VERSION:-7.2}-fpm AS development
+ARG PHP_VERSION
+
+FROM php:${PHP_VERSION}-fpm AS development
 
 # RUN apt-get update && apt-get install -y $DEPS_APT
 
