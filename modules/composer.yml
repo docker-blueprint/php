@@ -2,7 +2,7 @@ make_dirs:
   - /var/www/.composer
 stages:
   development:
-    - COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
+    - COPY --from=composer:1 /usr/bin/composer /usr/local/bin/composer
   production:
     - RUN composer global require hirak/prestissimo --no-plugins --no-scripts
     - RUN composer install --no-dev --no-suggest
