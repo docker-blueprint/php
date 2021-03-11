@@ -1,0 +1,13 @@
+{
+    "Name": "${NAME}",
+    "ID": "${ID}",
+    "Address": "${IP}",
+    "Port": 80,
+    "Check": {
+        "Name": "Service Health Status",
+        "DeregisterCriticalServiceAfter": "1m",
+        "Interval": "10s",
+        "Timeout": "5s",
+        "TCP": "${IP}:${PORT}"
+    }
+}

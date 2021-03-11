@@ -1,0 +1,1 @@
+# COPY %MODULE_CONSUL_DIR/payloads/register.json /etc/consul/payloads/

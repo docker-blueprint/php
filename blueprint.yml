@@ -1,17 +1,18 @@
 default_service: app
 user: www-data
-modules:
-  - composer
+# make_dirs:
+#   - .composer
+# modules:
+#   - composer
 dependencies:
   apt:
     - gettext-base
     - moreutils
-    - nginx
-    - wget
 purge:
   apt:
     - gettext-base
     - moreutils
-    - wget
 build_args:
-  PHP_VERSION: 7.4
+  PHP_VERSION: 7.2
+project:
+  context: development

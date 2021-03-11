@@ -1,0 +1,14 @@
+RUN mkdir -p storage
+WORKDIR storage
+RUN mkdir -p logs && \
+    mkdir -p framework && \
+    mkdir -p framework/cache && \
+    mkdir -p framework/cache/data && \
+    mkdir -p framework/sessions && \
+    mkdir -p framework/testing && \
+    mkdir -p framework/views
+# RUN touch logs/laravel.log
+WORKDIR ..
+# + Update ownership of `storage` directory
+RUN chown -R www-data: storage
+RUN chmod -R 775 storage

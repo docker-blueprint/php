@@ -1,0 +1,23 @@
+#!/usr/bin/with-contenv sh
+
+KEEP=""
+
+CONTAINER_MODE="${CONTAINER_MODE:-app}"
+ENVIRONMENT="$(cat /.docker-blueprint/env)"
+
+if [ -n $ENVIRONMENT ]; then
+    echo "Initializing \033[0;31m$ENVIRONMENT\033[0;0m container as \033[1;33m$CONTAINER_MODE\033[0;0m"
+
+    if [ "$ENVIRONMENT" = "laravel" ]; then
+        if [ "$CONTAINER_MODE" = "scheduler" ]; then
+            KEEP="nginx|cron"
+        elif [ "$CONTAINER_MODE" = "worker" ]; then
+            KEEP="nginx|horizon"
+        elif [ "$CONTAINER_MODE" = "app" ]; then
+            KEEP="nginx|php-fpm"
+        fi
+    fi
+fi
+
+cd /etc/services.d
+ls | grep -v -E $KEEP | xargs rm -rf

@@ -1,0 +1,9 @@
+dependencies:
+  apt:
+    - expect
+    - libzstd-dev
+purge:
+  apt:
+    - expect
+depends_on:
+  - igbinary

@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  worker:
+    build:
+      context: .
+      target: development
+    # depends_on:
+    #   - database
+    #   - cache
+    environment:
+      CONTAINER_MODE: worker
+      NGINX_PATH: public
+    volumes:
+      - .:/var/www/html/

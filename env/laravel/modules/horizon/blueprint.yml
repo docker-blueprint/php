@@ -1,0 +1,6 @@
+dependencies:
+  php:
+    - pcntl
+depends_on:
+  - composer
+  - worker

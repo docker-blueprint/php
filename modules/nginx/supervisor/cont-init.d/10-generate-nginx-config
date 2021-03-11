@@ -1,0 +1,11 @@
+#!/usr/bin/with-contenv sh
+
+echo "Updating nginx config..."
+
+echo "NGINX_PATH=$NGINX_PATH"
+
+# Replace $NGINX_PATH in nginx config with environemnt variable value.
+# This allows to use directories under `/var/www/html` to host your application
+# (for example `/var/www/html/public` with `NGINX_PATH=public`)
+envsubst '${NGINX_PATH}' </etc/nginx/sites-available/default | \
+    sponge /etc/nginx/sites-available/default

@@ -1,0 +1,7 @@
+ENV DB_CONNECTION=sqlite
+ENV DB_DATABASE=mock.sqlite
+RUN touch $DB_DATABASE
+RUN php artisan config:clear
+RUN php artisan package:discover
+RUN php artisan optimize
+RUN rm $DB_DATABASE

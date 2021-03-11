@@ -1,0 +1,10 @@
+version: '3.7'
+services:
+  app:
+    build:
+      context: .
+      target: production
+      args:
+        MIX_BUGSNAG_DEBUG: ${MIX_BUGSNAG_DEBUG}
+        MIX_BUGSNAG_API_KEY: ${MIX_BUGSNAG_API_KEY}
+    env_file: .env

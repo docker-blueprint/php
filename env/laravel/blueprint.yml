@@ -1,4 +1,6 @@
 modules:
+  - nginx
+  - composer
   - npm
-build_args:
-  NGINX_PATH: public
+  - gd
+  - intl

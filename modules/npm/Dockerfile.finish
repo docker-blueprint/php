@@ -1,0 +1,2 @@
+# RUN find . -type d \( -path ./node_modules \) -prune -o -exec chown www-data: {} \;
+RUN npm run production

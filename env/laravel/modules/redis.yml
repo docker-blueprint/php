@@ -1,3 +1,0 @@
-environment:
-  REDIS_HOST: cache
-  CACHE_DRIVER: redis

@@ -1,0 +1,5 @@
+RUN mkdir /var/www/.composer
+RUN chown -R www-data: /var/www/.composer
+
+COPY --from=composer:1 /usr/bin/composer /usr/local/bin/composer
+# RUN composer global require hirak/prestissimo --no-plugins --no-scripts

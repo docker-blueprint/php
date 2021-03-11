@@ -1,0 +1,5 @@
+COPY --chown=www-data:www-data ["composer.json", "composer.lock", "/var/www/html/"]
+
+# RUN su www-data -s /bin/bash -c 'composer global require hirak/prestissimo --no-scripts'
+RUN su www-data -s /bin/bash -c 'composer install --no-dev --no-suggest --no-scripts --no-autoloader'
+# RUN su www-data -s /bin/bash -c 'composer global remove hirak/prestissimo --no-scripts'
