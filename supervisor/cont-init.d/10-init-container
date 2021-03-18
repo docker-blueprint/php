@@ -20,4 +20,4 @@ if [ -n $ENVIRONMENT ]; then
 fi
 
 cd /etc/services.d
-ls | grep -v -E $KEEP | xargs rm -rf
+ls | grep -v -E "$KEEP" | xargs rm -rf
