@@ -1,5 +1,7 @@
-RUN mkdir /var/www/.composer
-RUN chown -R www-data: /var/www/.composer
+RUN mkdir -p /var/www/.composer /.composer
+RUN chown -R www-data: /var/www/.composer /.composer
+RUN chmod -R 777 /var/www/.composer /.composer
 
-COPY --from=composer:1 /usr/bin/composer /usr/local/bin/composer
-# RUN composer global require hirak/prestissimo --no-plugins --no-scripts
+ARG COMPOSER_VERSION
+
+RUN install-php-extensions @composer-${COMPOSER_VERSION}
