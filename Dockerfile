@@ -7,6 +7,11 @@ ARG PHP_VERSION=7.2
 
 FROM php:${PHP_VERSION}-fpm AS base
 
+# Use docker-php-extension-installer
+# Source: https://github.com/mlocati/docker-php-extension-installer#downloading-the-script-on-the-fly
+ADD --chown=www-data:www-data https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
+RUN chmod +x /usr/local/bin/install-php-extensions && sync
+
 # Download the package lists from the repositories
 RUN apt-get update
 
