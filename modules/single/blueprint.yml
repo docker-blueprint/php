@@ -1,2 +1,4 @@
+depends_on:
+  - nginx
 disables:
   - cluster
