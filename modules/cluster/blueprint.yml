@@ -1,4 +1,5 @@
 depends_on:
+  - nginx
   - consul
   - load-balancer
 disables:
