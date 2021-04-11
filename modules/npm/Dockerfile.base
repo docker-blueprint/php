@@ -1,5 +1,5 @@
-RUN mkdir /var/www/.npm
-RUN chown -R www-data: /var/www/.npm
+RUN mkdir -p /var/www/.npm /.config
+RUN chown -R www-data: /var/www/.npm /.config
 
 RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
 RUN apt-get install -y nodejs
