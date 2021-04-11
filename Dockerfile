@@ -53,6 +53,7 @@ RUN echo '%ENV_NAME' >/.docker-blueprint/env
 
 FROM base AS development
 
+# clear_env must equal to 'no' as per https://stackoverflow.com/a/37062629/2467106
 RUN ln -s /usr/local/etc/php/php.ini-development /usr/local/etc/php/php.ini
 
 RUN groupadd -g 1000 local-workspace
