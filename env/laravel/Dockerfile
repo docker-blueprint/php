@@ -1,1 +1,1 @@
-#include %ENV_LARAVEL_MODULE_HORIZON_DIR/Dockerfile
+# Laravel-specific dockerfile commands here

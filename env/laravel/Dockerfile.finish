@@ -1,7 +1,10 @@
+# Create dummy database to be able to call artisan commands
 ENV DB_CONNECTION=sqlite
 ENV DB_DATABASE=mock.sqlite
 RUN touch $DB_DATABASE
+# Clear config so it could be read from the environment variables later
 RUN php artisan config:clear
 RUN php artisan package:discover
 RUN php artisan optimize
+# Remove dummy database
 RUN rm $DB_DATABASE
