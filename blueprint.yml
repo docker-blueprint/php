@@ -9,7 +9,7 @@ purge:
     - gettext-base
     - moreutils
 build_args:
-  PHP_VERSION: 7.2
+  PHP_VERSION: 8.0
 project:
   context: development
 modules:
