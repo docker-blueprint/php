@@ -13,4 +13,6 @@ if [[ -f composer.json ]]; then
     fi
 fi
 
-composer require laravel/horizon$version_suffix --no-scripts
+composer require laravel/horizon$version_suffix
+
+php artisan horizon:install
