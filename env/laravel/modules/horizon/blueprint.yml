@@ -1,4 +1,4 @@
 depends_on:
-  - composer
+  - scheduler
   - worker
   - pcntl
