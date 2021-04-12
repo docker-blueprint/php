@@ -3,4 +3,4 @@ depends_on:
   - consul
   - load-balancer
 disables:
-  - standalone
+  - single-instance

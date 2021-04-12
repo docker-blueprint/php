@@ -1,9 +1,5 @@
 default_service: app
 user: www-data
-# make_dirs:
-#   - .composer
-# modules:
-#   - composer
 dependencies:
   apt:
     - gettext-base
@@ -16,3 +12,5 @@ build_args:
   PHP_VERSION: 7.2
 project:
   context: development
+modules:
+  - single-instance
