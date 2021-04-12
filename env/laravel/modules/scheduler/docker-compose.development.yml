@@ -4,9 +4,6 @@ services:
     build:
       context: .
       target: development
-    # depends_on:
-    #   - database
-    #   - cache
     environment:
       CONTAINER_MODE: scheduler
       NGINX_PATH: public

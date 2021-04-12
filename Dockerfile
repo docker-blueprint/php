@@ -25,8 +25,6 @@ RUN apt-get update
 # Install PHP packages required for the modules
 # RUN docker-php-ext-install %DEPS_PHP
 
-# Run BASE stage commands
-
 #include %MODULE_NGINX_DIR/Dockerfile.base
 #include %MODULE_COMPOSER_DIR/Dockerfile.base
 #include %MODULE_REDIS_DIR/Dockerfile.base
@@ -74,7 +72,6 @@ RUN rm -rf ./*
 
 #include %MODULE_NPM_DIR/Dockerfile.production
 
-# kind:module,name:composer,step:finalize
 #include %MODULE_COMPOSER_DIR/Dockerfile.production
 
 #include %ENV_LARAVEL_DIR/Dockerfile.production
@@ -89,14 +86,10 @@ COPY --chown=www-data:www-data . /var/www/html
 
 #include %MODULE_NPM_DIR/Dockerfile.finish
 
-# kind:module,name:composer,step:finalize
 #include %MODULE_COMPOSER_DIR/Dockerfile.finish
 
-# kind:env,name:laravel,step:finalize
 #include %ENV_LARAVEL_DIR/Dockerfile.finish
 
-# kind:blueprint,step:inline
 RUN ln -s /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini
 
-# kind:blueprint,step:finalize
 # RUN apt-get purge -y %APT_PURGE
