@@ -6,9 +6,9 @@ RUN chown -R www-data: vendor
 RUN chmod -R 775 vendor
 
 RUN [ "${COMPOSER_VERSION}" = "1" ] && \
-    su www-data -s /bin/bash -c 'composer global require hirak/prestissimo --no-scripts'
+    su www-data -s /bin/bash -c 'composer global require hirak/prestissimo --no-scripts'; exit 0
 
 RUN su www-data -s /bin/bash -c 'composer install --no-dev --no-suggest --no-scripts --no-autoloader'
 
 RUN [ "${COMPOSER_VERSION}" = "1" ] && \
-    su www-data -s /bin/bash -c 'composer global remove hirak/prestissimo --no-scripts'
+    su www-data -s /bin/bash -c 'composer global remove hirak/prestissimo --no-scripts'; exit 0
