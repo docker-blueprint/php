@@ -76,11 +76,6 @@ RUN rm -rf ./*
 
 #include %ENV_LARAVEL_DIR/Dockerfile.production
 
-ARG MIX_BUGSNAG_DEBUG
-ENV MIX_BUGSNAG_DEBUG=$MIX_BUGSNAG_DEBUG
-ARG MIX_BUGSNAG_API_KEY
-ENV MIX_BUGSNAG_API_KEY=$MIX_BUGSNAG_API_KEY
-
 # # Copy project files
 COPY --chown=www-data:www-data . /var/www/html
 
