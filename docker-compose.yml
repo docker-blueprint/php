@@ -6,4 +6,3 @@ services:
       target: development
     environment:
       CONTAINER_MODE: app
-      NGINX_PATH: public
