@@ -1,0 +1,7 @@
+version: '3.7'
+services:
+  load-balancer:
+    build:
+      context: ~MODULE_LOAD_BALANCER_DIR
+    ports:
+      - ${EXPOSE_PORT:-80}:80

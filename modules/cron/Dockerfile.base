@@ -1,0 +1,9 @@
+RUN touch /var/log/cron.log
+RUN mkdir -p /etc/cron.d/
+
+#include %ENV_LARAVEL_MODULE_CRON_DIR/Dockerfile.base
+
+# Give execution rights on the cron jobs
+RUN chmod -R 0644 /etc/cron.d
+# Apply all available cron jobs (https://unix.stackexchange.com/a/360947)
+RUN cat /etc/cron.d/* | crontab -

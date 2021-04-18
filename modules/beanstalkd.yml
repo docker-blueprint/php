@@ -1,5 +1,0 @@
-services:
-  queue:
-    image: schickling/beanstalkd:latest
-    entrypoint: "/usr/bin/beanstalkd"
-    restart: always

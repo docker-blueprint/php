@@ -1,3 +1,0 @@
-stages:
-  development:
-    - RUN pecl install igbinary && docker-php-ext-enable igbinary

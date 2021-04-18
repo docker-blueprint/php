@@ -1,0 +1,5 @@
+depends_on:
+  - git
+  - zip
+build_args:
+  COMPOSER_VERSION: 2

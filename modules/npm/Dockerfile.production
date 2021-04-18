@@ -1,0 +1,2 @@
+COPY --chown=www-data:www-data ["package.json", "package-lock.json", "/var/www/html/"]
+RUN su www-data -s /bin/bash -c 'npm install --production'

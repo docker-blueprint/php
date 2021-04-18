@@ -1,0 +1,9 @@
+#!/usr/bin/with-contenv sh
+
+. /etc/supervisor-config.sh
+
+echo "Deregistering service with consul..."
+
+PAYLOAD=$(envsubst '${NAME} ${IP} ${PORT} ${ID}' </etc/consul/payloads/register.json)
+
+curl -s -X PUT "http://consul:8500/v1/agent/service/deregister/$ID"

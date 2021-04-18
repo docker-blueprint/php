@@ -1,2 +1,0 @@
-environment:
-  QUEUE_DRIVER: beanstalkd

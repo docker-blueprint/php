@@ -1,0 +1,3 @@
+#!/usr/bin/execlineb -P
+
+/usr/bin/consul-template -config=/etc/nginx/conf.d/consul-template-config.hcl

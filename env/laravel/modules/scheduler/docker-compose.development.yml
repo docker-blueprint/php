@@ -1,0 +1,11 @@
+version: '3.7'
+services:
+  scheduler:
+    build:
+      context: .
+      target: development
+    environment:
+      CONTAINER_MODE: scheduler
+      NGINX_PATH: public
+    volumes:
+      - .:/var/www/html/
