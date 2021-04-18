@@ -13,6 +13,8 @@ if [[ -f composer.json ]]; then
     fi
 fi
 
+COMPOSER_MEMORY_LIMIT=${BLUEPRINT_COMPOSER_MEMORY_LIMIT-'-1'}
+
 composer require laravel/horizon$version_suffix
 
 php artisan horizon:install
