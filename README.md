@@ -7,7 +7,7 @@
     </a>
 </div>
 
-# **PHP** Docker Blueprint
+# PHP Docker Blueprint
 
 This is a **PHP** blueprint for [docker-blueprint](https://github.com/docker-blueprint/core).
 It is based on [PHP FPM docker image](https://hub.docker.com/_/php) and includes a number of generic [modules](https://github.com/docker-blueprint/php/tree/master/modules)
