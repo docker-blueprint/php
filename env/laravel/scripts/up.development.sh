@@ -16,3 +16,7 @@ if [[ ! -f artisan ]]; then
     npm install
 
 fi
+
+if [[ ! -f .env ]] && [[ -f .env.example ]]; then
+    cp .env.example .env
+fi
