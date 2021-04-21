@@ -10,9 +10,13 @@ if [ -n $ENVIRONMENT ]; then
 
     if [ "$ENVIRONMENT" = "laravel" ]; then
         if [ "$CONTAINER_MODE" = "scheduler" ]; then
-            KEEP="nginx|cron"
+            KEEP="cron"
         elif [ "$CONTAINER_MODE" = "worker" ]; then
-            KEEP="nginx|horizon"
+            if [ "$(ls /etc/services.d/ | grep horizon | wc -l)" -gt 0 ]; then
+                KEEP="horizon"
+            else
+                KEEP="worker"
+            fi
         elif [ "$CONTAINER_MODE" = "app" ]; then
             KEEP="nginx|php-fpm"
         fi
