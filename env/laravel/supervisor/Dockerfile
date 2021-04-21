@@ -1,1 +1,2 @@
 # COPY %ENV_LARAVEL_MODULE_HORIZON_DIR/supervisor/ /etc/
+# COPY %ENV_LARAVEL_MODULE_WORKER_DIR/supervisor/ /etc/
