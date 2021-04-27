@@ -3,6 +3,5 @@ services:
   app:
     build:
       context: .
-      target: development
     environment:
       CONTAINER_MODE: app

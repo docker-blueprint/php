@@ -1,6 +1,5 @@
-version: '3.7'
 services:
-  cache:
+  app:
     environment:
       REDIS_HOST: ${REDIS_HOST:-cache}
       REDIS_PASSWORD: ${REDIS_PASSWORD:-null}
