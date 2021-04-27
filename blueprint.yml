@@ -4,10 +4,6 @@ dependencies:
   apt:
     - gettext-base
     - moreutils
-purge:
-  apt:
-    - gettext-base
-    - moreutils
 build_args:
   PHP_VERSION: 8.0
 project:
