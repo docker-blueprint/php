@@ -1,3 +1,17 @@
 dependencies:
   php:
     - pdo_mysql
+commands:
+  'db:import':
+    no_tty: true # don't allocate pseudo-TTY (pass -T flag to docker-blueprint)
+    as_root: true # invoke this program as root user
+    service: database
+    context: development
+    runtime: bash -c # -c flag tells bash to run inline command that follows
+    script: | # Multiple lines with line break
+      if [[ -z $ARG_1 ]]; then
+        echo "Error: no database specified"
+        exit 1
+      fi
+
+      mysql --database=$ARG_1 < /dev/stdin
