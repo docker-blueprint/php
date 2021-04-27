@@ -90,4 +90,4 @@ COPY --chown=www-data:www-data . /var/www/html
 
 RUN ln -s /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini
 
-# RUN apt-get purge -y %APT_PURGE
+# RUN apt-get purge -y %PURGE_APT
