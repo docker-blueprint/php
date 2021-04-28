@@ -9,6 +9,6 @@ RUN php artisan optimize
 # Remove dummy database
 RUN rm $DB_DATABASE
 
-# Update ownership of `storage` directory
-RUN chown -R www-data: storage
-RUN chmod -R 775 storage
+# Update ownership of `storage` and `cache` directories
+RUN chown -R www-data: storage bootstrap/cache
+RUN chmod -R 777 storage bootstrap/cache
