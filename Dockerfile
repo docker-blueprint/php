@@ -79,7 +79,7 @@ RUN rm -rf ./*
 
 #include %ENV_LARAVEL_DIR/Dockerfile.production
 
-# # Copy project files
+# Copy project files
 COPY --chown=www-data:www-data . /var/www/html
 
 #include %MODULE_NPM_DIR/Dockerfile.finish
